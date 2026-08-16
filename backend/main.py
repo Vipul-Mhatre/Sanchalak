@@ -43,7 +43,10 @@ app.add_middleware(
 # Usage tracking (simple local store)
 # ---------------------------------------------------------------------------
 
-USAGE_LOG_FILE = Path(__file__).resolve().parent / "usage_log.json"
+if os.getenv("VERCEL"):
+    USAGE_LOG_FILE = Path("/tmp/usage_log.json")
+else:
+    USAGE_LOG_FILE = Path(__file__).resolve().parent / "usage_log.json"
 
 
 def _load_usage_log() -> list[dict]:

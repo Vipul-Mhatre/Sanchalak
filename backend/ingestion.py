@@ -11,6 +11,11 @@ import re
 from pathlib import Path
 from typing import Optional
 
+if os.getenv("VERCEL"):
+    os.environ["HOME"] = "/tmp"
+    os.environ["ANONYMIZED_TELEMETRY"] = "False"
+    Path.home = lambda: Path("/tmp")
+
 import chromadb
 from chromadb.utils import embedding_functions
 
@@ -18,17 +23,26 @@ from chromadb.utils import embedding_functions
 # Constants
 # ---------------------------------------------------------------------------
 
-DATASET_DIR = Path(__file__).resolve().parent.parent / "dataset"
-CHROMA_DIR = Path(__file__).resolve().parent / "chroma_db"
-HASH_FILE = Path(__file__).resolve().parent / "file_hashes.json"
+if os.getenv("VERCEL"):
+    CHROMA_DIR = Path("/tmp/chroma_db")
+    HASH_FILE = Path("/tmp/file_hashes.json")
+else:
+    CHROMA_DIR = Path(__file__).resolve().parent / "chroma_db"
+    HASH_FILE = Path(__file__).resolve().parent / "file_hashes.json"
 COLLECTION_NAME = "customer_data"
 
 
 def _get_embedding_fn():
-    """Sentence-transformer embedding function for ChromaDB."""
-    return embedding_functions.SentenceTransformerEmbeddingFunction(
-        model_name="all-MiniLM-L6-v2"
-    )
+    """Sentence-transformer or default embedding function for ChromaDB."""
+    try:
+        from chromadb.utils import embedding_functions
+        return embedding_functions.SentenceTransformerEmbeddingFunction(
+            model_name="all-MiniLM-L6-v2"
+        )
+    except Exception as e:
+        print(f"[ingestion] SentenceTransformers not available, using DefaultEmbeddingFunction: {e}")
+        from chromadb.utils import embedding_functions
+        return embedding_functions.DefaultEmbeddingFunction()
 
 
 def _get_collection(client: chromadb.ClientAPI):
@@ -480,6 +494,10 @@ def search_customer_data(
     """
     client = chromadb.PersistentClient(path=str(CHROMA_DIR))
     collection = _get_collection(client)
+    if collection.count() == 0:
+        print("[ingestion] ChromaDB collection is empty, building index from dataset...")
+        build_index()
+        collection = _get_collection(client)
 
     # Build where filter
     where_filter = None
