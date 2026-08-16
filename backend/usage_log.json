@@ -1,0 +1,146 @@
+[
+  {
+    "timestamp": "2026-08-15T16:00:02.526231",
+    "question": "What are the open issues for Meridian AgriTech?",
+    "sources": [
+      "docs",
+      "customer_data"
+    ],
+    "answer_length": 1056
+  },
+  {
+    "timestamp": "2026-08-15T16:34:53.040702",
+    "question": "How does mission scheduling work in FlytBase?",
+    "sources": [
+      "docs",
+      "customer_data"
+    ],
+    "answer_length": 2343
+  },
+  {
+    "timestamp": "2026-08-15T17:07:53.158773",
+    "question": "How does mission scheduling work in FlytBase?",
+    "sources": [
+      "docs",
+      "customer_data"
+    ],
+    "answer_length": 2467
+  },
+  {
+    "timestamp": "2026-08-15T17:09:03.201187",
+    "question": "How does mission scheduling work in FlytBase?",
+    "sources": [
+      "docs",
+      "customer_data"
+    ],
+    "answer_length": 2470
+  },
+  {
+    "timestamp": "2026-08-15T17:13:39.710939",
+    "question": "How does mission scheduling work in FlytBase? Are there any feature requests for it?",
+    "sources": [
+      "customer_data",
+      "docs"
+    ],
+    "answer_length": 2834
+  },
+  {
+    "timestamp": "2026-08-15T17:13:50.125049",
+    "question": "How does mission scheduling work in FlytBase? Are there any feature requests for it?",
+    "sources": [
+      "customer_data",
+      "docs"
+    ],
+    "answer_length": 2261
+  },
+  {
+    "timestamp": "2026-08-15T17:14:41.743124",
+    "question": "How does mission scheduling work in FlytBase? Are there any feature requests for it?",
+    "sources": [
+      "docs",
+      "customer_data"
+    ],
+    "answer_length": 2426
+  },
+  {
+    "timestamp": "2026-08-15T17:14:46.555244",
+    "question": "Which accounts requested a feature the platform already supports according to the docs?",
+    "sources": [
+      "docs",
+      "customer_data"
+    ],
+    "answer_length": 2170
+  },
+  {
+    "timestamp": "2026-08-15T17:15:59.056027",
+    "question": "Which accounts requested a feature the platform already supports according to the docs?",
+    "sources": [
+      "customer_data",
+      "docs"
+    ],
+    "answer_length": 1016
+  },
+  {
+    "timestamp": "2026-08-15T17:16:11.956756",
+    "question": "What is the weather on Mars tomorrow?",
+    "sources": [
+      "customer_data",
+      "docs"
+    ],
+    "answer_length": 247
+  },
+  {
+    "timestamp": "2026-08-15T17:18:49.140425",
+    "question": "How does mission scheduling work in FlytBase?",
+    "sources": [
+      "customer_data",
+      "docs"
+    ],
+    "answer_length": 2489
+  },
+  {
+    "timestamp": "2026-08-15T17:19:54.166030",
+    "question": "Which accounts requested a feature the platform already supports according to the docs?",
+    "sources": [
+      "customer_data",
+      "docs"
+    ],
+    "answer_length": 1010
+  },
+  {
+    "timestamp": "2026-08-15T17:38:58.643921",
+    "question": "whats new",
+    "sources": [
+      "customer_data",
+      "docs"
+    ],
+    "answer_length": 2896
+  },
+  {
+    "timestamp": "2026-08-15T17:46:37.062654",
+    "question": "what was discused regarding Northfall Security Group",
+    "sources": [
+      "customer_data",
+      "docs"
+    ],
+    "answer_length": 2465
+  },
+  {
+    "timestamp": "2026-08-15T18:59:55.086383",
+    "question": "How does mission scheduling work in FlytBase?",
+    "sources": [
+      "customer_data",
+      "docs"
+    ],
+    "answer_length": 2450
+  },
+  {
+    "timestamp": "2026-08-15T19:01:22.829490",
+    "question": "what are is current conversation issue",
+    "sources": [
+      "customer_data",
+      "docs"
+    ],
+    "answer_length": 2413
+  }
+]
